@@ -7,7 +7,8 @@ import {
   IconButton
 } from '@edx/paragon';
 import Sidebar from '../Sidebar/sidebar';
-
+import ChatSuporte from '../Chatsuporte/ChatSuporte';
+import { Announcement } from '@openedx/paragon/icons';
 
 const App = () => {
   const [messages, setMessages] = useState([]);
@@ -60,7 +61,7 @@ const App = () => {
   return (
     <div style={{ display: 'flex', height: '100vh', fontFamily: 'Arial, sans-serif' }}>
       <Sidebar />
-
+      
       <div
         style={{
           flex: 1,
@@ -71,7 +72,7 @@ const App = () => {
           padding: '16px',
         }}
       >
-        <h1 style={{ marginBottom: '16px' }}>PD Coach</h1>
+        <h1 style={{ marginBottom: '16px' }}>Coach</h1>
 
         <div
           style={{
@@ -139,30 +140,53 @@ const App = () => {
           </Button>
         </div>
 
-        <IconButton
-          icon="?"
-          aria-label="Abrir Suporte"
-          onClick={toggleChatbot}
+        <div
           style={{
             position: 'fixed',
             bottom: '20px',
-            right: '0px',
-            background: 'linear-gradient(15.46deg, #4A25E1 26.3%, #7B5AFF)',
-            border: 'none',
-            borderRadius: '50%',
-            width: '60px',
-            height: '60px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
+            right: '80px',
+            width: '300px',
+            maxHeight: isChatbotVisible ? '400px' : '0',
+            overflow: 'hidden',
+            backgroundColor: 'white',
             boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)',
-            cursor: 'pointer',
-            zIndex: '20',
-            color: '#fff',
+            borderRadius: '8px',
+            zIndex: 50,
+            transition: 'max-height 0.3s ease-in-out',
           }}
-        />
+        >
+          {isChatbotVisible && (
+            <ChatSuporte
+              closeChat={() => setIsChatbotVisible(false)}
+              messages={messages}
+              setMessages={setMessages}
+              loading={loading}
+              setLoading={setLoading}
+            />
+          )}
+        </div>
 
-        
+        <IconButton
+  icon={<Announcement />}
+  aria-label="Abrir Suporte"
+  onClick={toggleChatbot}
+  style={{
+    position: 'fixed',
+    bottom: '20px',
+    right: '0px',
+    border: 'none',
+    borderRadius: '50%',
+    width: '60px',
+    height: '60px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)',
+    cursor: 'pointer',
+    zIndex: 20,
+    backgroundColor: 'white', // Garante que o fundo não obscureça o ícone
+  }}
+/>
       </div>
     </div>
   );
