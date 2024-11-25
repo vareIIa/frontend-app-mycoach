@@ -1,7 +1,7 @@
 {
   "name": "@edx/frontend-app-mycoach",
   "version": "0.1.0",
-  "description": "frontend-app-mycoach",
+  "description": "Mycoach",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vareIIa/frontend-app-mycoach.git"
@@ -43,6 +43,7 @@
     "@fortawesome/free-regular-svg-icons": "5.15.4",
     "@fortawesome/free-solid-svg-icons": "5.15.4",
     "@fortawesome/react-fontawesome": "0.2.0",
+    "@openedx/paragon": "^22.10.0",
     "core-js": "3.33.0",
     "prop-types": "15.8.1",
     "react": "17.0.2",

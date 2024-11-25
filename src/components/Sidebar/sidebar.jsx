@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './sidebar.scss';
 import Logo from '../../assets/logo.jpg';
+import { Home, Settings, Help  } from '@openedx/paragon/icons';
 
 const Sidebar = () => {
     const [openDropdown, setOpenDropdown] = useState(false);
@@ -19,45 +20,22 @@ const Sidebar = () => {
             <nav className="sidebar-nav">
                 <ul>
                     <li>
-                        <a href="https://apps.projetodesenvolve.online/learner-dashboard/" className="nav-link">
-                            Inicio
-                        </a>
+                    <a href="https://apps.projetodesenvolve.online/learner-dashboard/" className="nav-link">
+                <Home className="icon" /> Inicio
+            </a>
                     </li>
                     <li>
                         <a href="https://apps.projetodesenvolve.online/account/" className="nav-link">
-                            Configurações da Conta
+                          <Settings className="icon" />  Configurações
                         </a>
                     </li>
                     <li>
-                        <button
-                            className={`dropdown-toggle ${openDropdown ? 'active' : ''}`}
-                            onClick={toggleDropdown}
-                        >
-                            Matérias
-                        </button>
-                        {openDropdown && (
-                            <ul className="dropdown-menu">
-                                <li>
-                                    <a href="#action1" className="dropdown-item">
-                                        Action 1
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#action2" className="dropdown-item">
-                                        Action 2
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#action3" className="dropdown-item">
-                                        Action 3
-                                    </a>
-                                </li>
-                            </ul>
-                        )}
+                    
+                    
                     </li>
                     <li>
                         <a href="https://ajuda-projetodesenvolve.freshdesk.com/support/login" className="nav-link">
-                            Ajuda
+                        <Help className="icon" />  Ajuda
                         </a>
                     </li>
                 </ul>
