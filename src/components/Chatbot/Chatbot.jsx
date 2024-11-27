@@ -4,11 +4,11 @@ import {
   Spinner,
   Alert,
   Input,
-  IconButton
 } from '@edx/paragon';
+import { AccountCircle, Message, Announcement } from '@openedx/paragon/icons';
 import Sidebar from '../Sidebar/sidebar';
 import ChatSuporte from '../Chatsuporte/ChatSuporte';
-import { Announcement } from '@openedx/paragon/icons';
+import './Chatbot.scss';
 
 const App = () => {
   const [messages, setMessages] = useState([]);
@@ -28,7 +28,7 @@ const App = () => {
     const payload = { message: input };
 
     try {
-      const response = await fetch('http://147.79.111.214:5000/chatbot/', {
+      const response = await fetch('https://mycoach.projetodesenvolve.online/chatbot/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -61,7 +61,6 @@ const App = () => {
   return (
     <div style={{ display: 'flex', height: '100vh', fontFamily: 'Arial, sans-serif' }}>
       <Sidebar />
-      
       <div
         style={{
           flex: 1,
@@ -97,7 +96,7 @@ const App = () => {
                 display: 'flex',
                 alignItems: 'flex-start',
                 marginBottom: '8px',
-                backgroundColor: msg.type === 'user' ? '#999999' : '#d1e7dd',
+                backgroundColor: msg.type === 'user' ? '#b3e3ff' : '#d4ffe4',
                 borderRadius: '8px',
                 padding: '8px',
               }}
@@ -114,7 +113,11 @@ const App = () => {
                   fontWeight: 'bold',
                 }}
               >
-                {msg.type === 'user' ? 'U' : 'B'}
+                {msg.type === 'user' ? (
+                  <AccountCircle style={{ color: '#007bff', fontSize: '24px' }} />
+                ) : (
+                  <Message style={{ color: '#28a745', fontSize: '24px' }} />
+                )}
               </div>
               <p style={{ margin: 0, wordBreak: 'break-word' }}>{msg.text}</p>
             </div>
@@ -131,6 +134,7 @@ const App = () => {
             style={{ flex: 1, borderRadius: '12px' }}
           />
           <Button
+            className="button"
             onClick={handleSendMessage}
             variant="primary"
             style={{ marginLeft: '16px', borderRadius: '12px' }}
@@ -145,7 +149,7 @@ const App = () => {
             position: 'fixed',
             bottom: '20px',
             right: '80px',
-            width: '300px',
+            width: '350px',
             maxHeight: isChatbotVisible ? '400px' : '0',
             overflow: 'hidden',
             backgroundColor: 'white',
@@ -166,27 +170,27 @@ const App = () => {
           )}
         </div>
 
-        <IconButton
-  icon={<Announcement />}
-  aria-label="Abrir Suporte"
-  onClick={toggleChatbot}
-  style={{
-    position: 'fixed',
-    bottom: '20px',
-    right: '0px',
-    border: 'none',
-    borderRadius: '50%',
-    width: '60px',
-    height: '60px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)',
-    cursor: 'pointer',
-    zIndex: 20,
-    backgroundColor: 'white', // Garante que o fundo não obscureça o ícone
-  }}
-/>
+        <button
+          onClick={toggleChatbot}
+          style={{
+            position: 'fixed',
+            bottom: '20px',
+            right: '2px',
+            backgroundColor: '#007bff',
+            border: 'none',
+            borderRadius: '50%',
+            width: '60px',
+            height: '60px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)',
+            cursor: 'pointer',
+            background: '#8c44ff'
+          }}
+        >
+          <Announcement style={{ fontSize: '24px', color: '#fff' }} />
+        </button>
       </div>
     </div>
   );
