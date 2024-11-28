@@ -7,7 +7,7 @@ import './index.scss';  // Importe o arquivo CSS onde você adicionou o estilo
 const zoomStyle = {
   transform: 'scale(1.1)',
   transformOrigin: '0 0',
-  width: '85%',
+  width: '90%',
   height: '100%',
   overflow: 'hidden',
 };

@@ -59,7 +59,7 @@ const App = () => {
   };
 
   return (
-    <div style={{ display: 'flex', height: '100vh', fontFamily: 'Arial, sans-serif' }}>
+    <div style={{ display: 'flex', height: '90vh', fontFamily: 'Arial, sans-serif' }}>
       <Sidebar />
       <div
         style={{
@@ -69,20 +69,20 @@ const App = () => {
           alignItems: 'center',
           justifyContent: 'center',
           padding: '16px',
+          height: '80vh',
         }}
       >
-        <h1 style={{ marginBottom: '16px' }}>Coach</h1>
+        <h1 style={{ marginBottom: '16px' }}>My Coach</h1>
 
         <div
           style={{
             height: '50vh',
-            width: '60vw',
-            maxWidth: '600px',
+            width: '60vw',      
             overflowY: 'auto',
             marginBottom: '16px',
-            border: '1px solid #ddd',
+            border: '2px solid #ddd',
             borderRadius: '8px',
-            padding: '16px',
+            padding: '18px',
             backgroundColor: '#f7f7f7',
           }}
         >
@@ -124,7 +124,7 @@ const App = () => {
           ))}
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', width: '100%', maxWidth: '600px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', width: '60vw'}}>
           <Input
             className="text-input"
             value={input}
@@ -192,6 +192,7 @@ const App = () => {
           <Announcement style={{ fontSize: '24px', color: '#fff' }} />
         </button>
       </div>
+      
     </div>
   );
 };
