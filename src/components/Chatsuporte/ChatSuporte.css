@@ -1,3 +1,10 @@
+
+.menus {
+  display: flex;
+
+
+}
+
 .chatbox {
     height: 300px;
     overflow-y: auto;

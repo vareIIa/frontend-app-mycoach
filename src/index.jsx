@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Chatbot from './components/Chatbot/Chatbot';
-import './index.scss';  // Importe o arquivo CSS onde você adicionou o estilo
+import './index.scss';  
 
-// Código CSS inline
 const zoomStyle = {
-  transform: 'scale(1.1)',
+  transform: 'scale(1.0)',
   transformOrigin: '0 0',
-  width: '90%',
+  width: '95%',
   height: '100%',
   overflow: 'hidden',
 };

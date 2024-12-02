@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Scratch",
+    "link": "https://apps.projetodesenvolve.online/learning/course/course-v1:ProjetoDesenvolve+Scratch1+01/home",
+    "contexto": "Scratch é uma linguagem de programação visual desenvolvida pelo MIT, destinada principalmente a iniciantes e jovens aprendizes. Através da interface de blocos coloridos, os usuários podem criar jogos, animações e histórias interativas sem a necessidade de escrever código. Scratch ajuda a desenvolver o pensamento lógico, habilidades de resolução de problemas e criatividade. Por exemplo, para mover um personagem no Scratch, basta arranjar blocos como 'quando a bandeira verde for clicada' e 'mover 10 passos'. Isso promove uma introdução suave ao conceito de programação, criando uma base sólida para aprender linguagens mais avançadas no futuro."
+  },
+  {
+    "name": "No Code",
+    "link": "https://apps.projetodesenvolve.online/learning/course/course-v1:ProjetoDesenvolve+NoCode1+01/home",
+    "contexto": "A abordagem No Code permite que usuários criem aplicativos e soluções digitais sem a necessidade de escrever código tradicional. Plataformas como Webflow, Bubble e Airtable possibilitam que qualquer pessoa desenvolva sites, aplicativos e automações de maneira intuitiva, usando interfaces gráficas. Isso democratiza o acesso à tecnologia, permitindo que pessoas sem conhecimentos de programação possam criar soluções personalizadas. Por exemplo, ao usar o Bubble, você pode criar um aplicativo de gerenciamento de tarefas apenas arrastando e conectando blocos de funcionalidades, como formulários e listas de dados, sem escrever uma única linha de código."
+  },
+  {
+    "name": "Linux",
+    "link": "https://apps.projetodesenvolve.online/learning/course/course-v1:ProjetoDesenvolve+Linux1+01/home",
+    "contexto": "Linux é um sistema operacional de código aberto, conhecido pela sua robustez, segurança e flexibilidade. Utilizado por desenvolvedores, administradores de sistemas e empresas de tecnologia, o Linux oferece uma plataforma altamente personalizável, com diferentes distribuições como Ubuntu, Fedora e Debian. Ele é ideal para servidores e dispositivos móveis, além de ser a base de sistemas como Android. A linha de comando é uma das suas características principais, permitindo que tarefas complexas sejam realizadas rapidamente através de comandos, como 'sudo apt update' para atualizar pacotes no sistema. O uso do Linux no desenvolvimento de software é vasto, desde a criação de aplicativos até a administração de servidores."
+  },
+  {
+    "name": "Introdução a Web",
+    "link": "https://apps.projetodesenvolve.online/learning/course/course-v1:ProjetoDesenvolve+IntroWeb+01/home",
+    "contexto": "HTML (HyperText Markup Language) e CSS (Cascading Style Sheets) são as tecnologias fundamentais para criação de sites e páginas web. O HTML estrutura o conteúdo, como títulos, parágrafos e links, enquanto o CSS define a aparência visual, como cores, fontes e layout. Juntas, essas linguagens permitem criar páginas responsivas e visualmente atraentes. Por exemplo, para criar um título e uma imagem no HTML, você usaria o código: '<h1>Bem-vindo ao meu site</h1>' para o título e '<img src='imagem.jpg' alt='Exemplo' />' para a imagem. A combinação de HTML e CSS é essencial para o desenvolvimento front-end, a parte de um site que os usuários veem e interagem."
+  },
+  {
+    "name": "POO",
+    "link": "https://apps.projetodesenvolve.online/learning/course/course-v1:ProjetoDesenvolve+POO1+01/home",
+    "contexto": "A Programação Orientada a Objetos (POO) é um paradigma de programação que organiza o código em objetos, que podem conter dados (atributos) e funcionalidades (métodos). Essa abordagem facilita o desenvolvimento, tornando o código mais modular e reutilizável, além de refletir a estrutura do mundo real. Em linguagens como Python, Java e C++, a POO é amplamente utilizada. Um exemplo simples de POO em Python seria: 'class Carro: def __init__(self, cor, modelo): self.cor = cor; self.modelo = modelo', onde 'Carro' é a classe e os métodos são usados para definir as características e comportamentos do objeto. A POO melhora a manutenção do código e a escalabilidade das aplicações."
+  },
+  {
+    "name": "JavaScript",
+    "link": "https://apps.projetodesenvolve.online/learning/course/course-v1:ProjetoDesenvolve+JS1+01/home",
+    "contexto": "JavaScript é uma das linguagens de programação mais populares para o desenvolvimento web, sendo usada para adicionar interatividade e dinamismo a sites. Ele é executado no lado do cliente, ou seja, no navegador do usuário, permitindo que páginas da web respondam a ações do usuário, como cliques e digitação. Além disso, JavaScript é essencial no desenvolvimento de aplicativos móveis e no backend com o uso de frameworks como Node.js. Um exemplo simples de JavaScript seria: 'document.getElementById('botao').onclick = function() { alert('Cliquei no botão!'); }', que exibe uma mensagem quando o usuário clica em um botão. JavaScript é a espinha dorsal da web moderna."
+  },
+  {
+    "name": "Banco de Dados",
+    "link": "https://apps.projetodesenvolve.online/learning/course/course-v1:ProjetoDesenvolve+BD1+01/home",
+    "contexto": "Os bancos de dados são sistemas usados para armazenar, organizar e gerenciar dados de maneira eficiente. Relacionalmente, o SQL (Structured Query Language) é uma linguagem utilizada para interagir com bancos de dados como MySQL e PostgreSQL. Os bancos de dados são essenciais para armazenar informações de usuários, transações financeiras e registros de aplicativos. Um exemplo simples de consulta em SQL seria: 'SELECT * FROM alunos WHERE idade > 18;', que retorna todos os registros de alunos maiores de 18 anos. A compreensão do funcionamento de bancos de dados é crucial para o desenvolvimento de sistemas e aplicativos robustos."
+  },
+  {
+    "name": "Python I",
+    "link": "https://apps.projetodesenvolve.online/learning/course/course-v1:Projeto_Desenvolve+PY001+2024_S2/home",
+    "contexto": "Python é uma das linguagens de programação mais populares e flexíveis do mundo, conhecida por sua simplicidade e legibilidade. Desde sua criação por Guido van Rossum em 1991, a linguagem tem sido amplamente adotada em diversas áreas como desenvolvimento web, ciência de dados, inteligência artificial, automação e mais. Sua sintaxe simples e clara permite que programadores se concentrem na lógica do problema, sem se preocupar com a complexidade da linguagem. Por exemplo, em Python você pode somar dois números com: 'a = 5; b = 10; soma = a + b', tornando o aprendizado mais acessível e eficiente."
+  },
+  {
+    "name": "Python II",
+    "link": "https://apps.projetodesenvolve.online/learning/course/course-v1:ProjetoDesenvolve+Python2+2024/home",
+    "contexto": "No Python II, os alunos aprendem a utilizar as bibliotecas e frameworks mais avançados da linguagem para aplicações mais complexas. Python é amplamente utilizado em áreas como automação, análise de dados, aprendizado de máquina e desenvolvimento web. Bibliotecas como Pandas e Matplotlib são usadas para análise de dados, enquanto o Flask e Django são usados para desenvolvimento web. Por exemplo, para criar um gráfico simples com Matplotlib, o código seria: 'import matplotlib.pyplot as plt; plt.plot([1, 2, 3], [4, 5, 6]); plt.show()', ilustrando a versatilidade de Python para uma variedade de aplicações."
+  }
+]

@@ -1,10 +1,5 @@
-import React, { useState } from 'react';
-import {
-  Button,
-  Spinner,
-  Alert,
-  Input,
-} from '@edx/paragon';
+import React, { useState, useEffect } from 'react';
+import { Button, Spinner, Alert, Input, Dropdown } from '@edx/paragon';
 import { AccountCircle, Message, Announcement } from '@openedx/paragon/icons';
 import Sidebar from '../Sidebar/sidebar';
 import ChatSuporte from '../Chatsuporte/ChatSuporte';
@@ -15,6 +10,22 @@ const App = () => {
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [isChatbotVisible, setIsChatbotVisible] = useState(false);
+  const [topics, setTopics] = useState([]);
+  const [showOptions, setShowOptions] = useState(true); // Controla se mostramos opções ou o chat
+  const toggleChatbot = () => {
+    setIsChatbotVisible((prev) => !prev);
+  };
+  useEffect(() => {
+    fetch('api.json')
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Erro ao carregar o arquivo JSON.');
+        }
+        return response.json();
+      })
+      .then((data) => setTopics(data))
+      .catch((error) => console.error(error));
+  }, []);
 
   const handleSendMessage = async () => {
     if (!input.trim()) {
@@ -54,13 +65,19 @@ const App = () => {
     }
   };
 
-  const toggleChatbot = () => {
-    setIsChatbotVisible((prev) => !prev);
+  const handleSelectContext = (context) => {
+    setMessages((prev) => [
+      ...prev,
+      { type: 'bot', text: `${context}` },
+    ]);
+    setShowOptions(false);
   };
 
   return (
-    <div style={{ display: 'flex', height: '90vh', fontFamily: 'Arial, sans-serif' }}>
-      <Sidebar />
+    <div style={{ display: 'flex', width: '105vw', flexDirection: 'column', fontFamily: 'Arial, sans-serif' }}>
+      <div style={{ position: 'absolute' }}>
+        <Sidebar />
+      </div>
       <div
         style={{
           flex: 1,
@@ -68,27 +85,63 @@ const App = () => {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          padding: '16px',
+          padding: '30px',
           height: '80vh',
         }}
       >
-        <h1 style={{ marginBottom: '16px' }}>My Coach</h1>
+        <h1 style={{ marginBottom: '20px' }}>My Coach</h1>
 
         <div
           style={{
-            height: '50vh',
-            width: '60vw',      
+            height: '60vh',
+            width: '65vw',
             overflowY: 'auto',
             marginBottom: '16px',
             border: '2px solid #ddd',
-            borderRadius: '8px',
-            padding: '18px',
+            borderRadius: '10px',
+            padding: '20px',
             backgroundColor: '#f7f7f7',
           }}
         >
           {messages.length === 0 && (
-            <Alert variant="info">Envie uma mensagem para começar!</Alert>
+            <Alert variant="info"><strong>Bem vindo ao My Coach! </strong></Alert>
           )}
+          {messages.length === 0 && (
+            <Alert variant="info"><strong>Envie uma mensagem para começar, caso precise, aqui estão algumas dicas:</strong></Alert>
+          )}
+          {showOptions ? (
+            <div>
+              <Alert variant="info">
+                <strong>Aprenda sobre as suas matérias:</strong>
+                <div style={{ padding: 1, marginTop: 5, display: 'flex', flexWrap:'wrap' , justifyContent: 'center',}}>
+                  {topics.map((item, index) => (
+                    <Dropdown key={index} placement="bottom-end">
+                      <Dropdown.Toggle class='materias' variant="outline-primary" className="materias">
+                        {item.name}
+                      </Dropdown.Toggle>
+                      <Dropdown.Menu>
+                        <Dropdown.Item href={item.link} target="_blank">
+                          <strong>Acessar curso</strong>
+                        </Dropdown.Item>
+                        <Dropdown.Item onClick={() => handleSelectContext(item.contexto)}>
+                          <strong>Aprender sobre matéria!</strong>
+                        </Dropdown.Item>
+                      </Dropdown.Menu>
+                    </Dropdown>
+                  ))}
+                </div>
+              </Alert>
+            </div>
+          ) : (
+            <Button
+              variant="outline-primary"
+              onClick={() => setShowOptions(true)}
+              style={{ marginBottom: '10px' }}
+            >
+              Voltar para opções
+            </Button>
+          )}
+
           {messages.map((msg, index) => (
             <div
               key={index}
@@ -124,7 +177,7 @@ const App = () => {
           ))}
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', width: '60vw'}}>
+        <div style={{ display: 'flex', alignItems: 'center', width: '65vw', marginTop: '1vh' }}>
           <Input
             className="text-input"
             value={input}
@@ -140,11 +193,11 @@ const App = () => {
             style={{ marginLeft: '16px', borderRadius: '12px' }}
             disabled={loading}
           >
-            {loading ? <Spinner size="sm" /> : 'Enviar'}
+            {loading ? 'Enviar' : 'Enviar'}
           </Button>
         </div>
-
-        <div
+      </div>
+      <div
           style={{
             position: 'fixed',
             bottom: '20px',
@@ -191,9 +244,11 @@ const App = () => {
         >
           <Announcement style={{ fontSize: '24px', color: '#fff' }} />
         </button>
+      <div style={{ marginLeft: '20vw', fontSize: '13px', color: 'rgba(0, 0, 0, 0.5)', textAlign: 'center', display: 'flex', justifyContent: 'center', padding: '10px', marginTop: '2vh', maxWidth: '65vw' }}>
+        Estamos empolgados em apresentar o My Coach, uma ferramenta baseada em inteligência artificial que visa auxiliar os alunos no processo de aprendizado através de interações personalizadas. O My Coach está sendo testado para fornecer feedback em tempo real e suporte em várias disciplinas. Essa é uma fase experimental, onde estamos aprimorando a precisão e a relevância das respostas fornecidas.
       </div>
-      
     </div>
+    
   );
 };
 

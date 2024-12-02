@@ -80,7 +80,7 @@ function ChatSuporte() {
             <Dropdown.Toggle variant="primary" style={{ width: "100%", background: "#8c44ff" }}>
               Escolha uma opção
             </Dropdown.Toggle>
-            <Dropdown.Menu style={{ padding: "30px", width: "100%", marginBottom: 5 }}>
+            <Dropdown.Menu style={{ padding: "10px", width: "100%", textAlign: "center" }}>
               {messages[messages.length - 1].options.map((option, idx) => (
                 <div key={idx} style={{ marginBottom: "8px" }}>
                   <button
@@ -96,7 +96,6 @@ function ChatSuporte() {
                       border: "none",
                       borderRadius: "4px",
                       cursor: "pointer",
-                      background: "#8c44ffb",
                     }}
                   >
                     {option}
